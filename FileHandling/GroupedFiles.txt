@@ -1,0 +1,11 @@
+
+.py files:
+arithmetictables.py
+calculator.py
+filehandling.py
+
+.txt files:
+FileSize.txt
+FilesList.txt
+GroupedFiles.txt
+LargeFile.txt
