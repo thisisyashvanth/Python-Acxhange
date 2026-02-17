@@ -1,0 +1,8 @@
+pandas
+# Pandas is built on top of NumPy and focuses on structured data — like tables.
+# It gives, DataFrames (basically Excel spreadsheets in Python), Easy CSV / Excel, Filtering rows, Grouping data, Handling missing values, Time series tools
+
+numpy
+# NumPy is all about fast math and arrays.
+# Think of NumPy as giving Python a powerful calculator + super-efficient multidimensional arrays.
+# Instead of regular Python lists, NumPy uses something called an ndarray, which is much faster and designed for numerical work.
