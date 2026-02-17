@@ -1,27 +1,27 @@
 from pathlib import Path
 
-def encode(word):
-    result = []
-    for letter in word.upper():
-        if letter == " ":
-            result.append("00")
-        elif letter.isalpha():
-            result.append(f"{ord(letter)-64:02d}")
-        elif letter.isdigit():
-            result.append(f"{ord(letter)-21:02d}")
-    return "".join(result)
+def encode(ip):
+    op = []
+    for chr in ip.upper():
+        if chr.isspace():
+            op.append("00")
+        elif chr.isalpha():
+            op.append(f"{ord(chr)-64:02d}")
+        elif chr.isdigit():
+            op.append(f"{ord(chr)-21:02d}")
+    return "".join(op)
 
-def decode(word):
-    result = []
-    for i in range(0, len(word), 2):
-        pair = word[i:i+2]
+def decode(ip):
+    op = []
+    for i in range(0, len(ip), 2):
+        pair = ip[i:i+2]
         if pair == "00":
-            result.append(" ")
+            op.append(" ")
         elif int(pair)<=26:
-            result.append(chr(int(pair) + 64))
+            op.append(chr(int(pair) + 64))
         else:
-            result.append(chr(int(pair) + 21))
-    return "".join(result)
+            op.append(chr(int(pair) + 21))
+    return "".join(op)
 
 def get_from_file(file_name):
     path = Path(file_name)
@@ -29,8 +29,11 @@ def get_from_file(file_name):
         return None
     return path.read_text().strip()
 
+
+print("Hellowwww")
+
 while True:
-    choice = int(input("What do you want to perform ?\n1. Convert Alphabet String\n2. Convert Coded String\n3. Exit\n"))
+    choice = int(input("What do you want to perform ?\n1. Encode\n2. Decode\n3. Exit\n"))
     
     match choice:
         case 1:
@@ -39,12 +42,12 @@ while True:
             match ip_mode:
 
                 case 1:
-                    string = input("Enter any word: ")
+                    string = input("IP anything you want to encode: ")
                     op = encode(string)
-                    print(f"Encoded Word: {op}")
+                    print(f"Encoded OP: {op}")
 
                 case 2:
-                    file_name = input("Enter the file name where the ip exists: ")
+                    file_name = input("Enter the file name where ur IP exists: ")
                     file_content = get_from_file(file_name)
                     if file_content is None:
                         print("The entered file doesn't exist in CWD.")
@@ -52,7 +55,7 @@ while True:
                         print("The file is empty.")
                     else:
                         op = encode(file_content)
-                        print(f"Encoded Word: {op}")
+                        print(f"Encoded IP: {op}")
 
         case 2:
 
@@ -60,9 +63,9 @@ while True:
             match ip_mode:
 
                 case 1:
-                    string = input("Enter any word: ")
+                    string = input("IP anything you want to decode: ")
                     op = decode(string)
-                    print(f"Encoded Word: {op}")
+                    print(f"Decoded OP: {op}")
 
                 case 2:
                     file_name = input("Enter the file name where the ip exists: ")
@@ -73,7 +76,7 @@ while True:
                         print("The file is empty.")
                     else:
                         op = decode(file_content)
-                        print(f"Decoded Word: {op}")
+                        print(f"Decoded IP: {op}")
 
         case 3:
             print("Babaaiiii")
