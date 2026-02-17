@@ -1,7 +1,0 @@
-
-.py files:
-arithmetictables.py
-calculator.py
-
-.txt files:
-FilesList.txt

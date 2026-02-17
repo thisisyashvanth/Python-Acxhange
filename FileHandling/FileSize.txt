@@ -1,3 +1,0 @@
-
-Files Greater than 100MB
-LargeFile.txt - 110.00 MB

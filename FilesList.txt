@@ -1,3 +1,0 @@
-arithmetictables.py
-calculator.py
-FilesList.txt
